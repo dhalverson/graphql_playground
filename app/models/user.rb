@@ -1,4 +1,5 @@
 class User < ApplicationRecord
-  validates_presence_of :name, :email
+  validates :name, presence: true
+  validates :email, uniqueness: true, presence: true
   has_many :posts
 end
